@@ -1,0 +1,3 @@
+-- 코드를 입력하세요
+# SELECT b.title, b.board_id, r.reply_id, r.writer_id, r.contents, r.created_date FROM USED_GOODS_BOARD as b JOIN USED_GOODS_REPLY as r WHERE r.board_id = b.board_id and YEAR(b.created_date) = 2023 AND MONTH(b.created_date) = 10 ORDER BY r.created_date asc, b.board_id desc;
+SELECT b.title, b.board_id, r.reply_id, r.writer_id, r.contents, date_format(r.created_date, '%Y-%m-%d') as created_date FROM USED_GOODS_BOARD as b JOIN USED_GOODS_REPLY as r WHERE r.board_id = b.board_id AND b.created_date BETWEEN '2022-10-01' AND '2022-10-31' ORDER BY r.created_date asc, b.title asc;
